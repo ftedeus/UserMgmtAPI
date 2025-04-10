@@ -5,8 +5,8 @@
 node_modules/
 
 # Ignore compiled binaries
-bin/
-obj/
+# bin/
+# obj/
 
 # Ignore environment files
 .env

@@ -24,10 +24,6 @@ app.UseLoggingMiddleware();
 app.UseAuthenticationMiddleware();
 
 
-
-// Map endpoints after middleware
-app.MapGet("/", () => "Hello, world!");
-
 // GET: Retrieve all users
 app.MapGet("/users", () => Results.Ok(users));
 
