@@ -1,0 +1,100 @@
+@UserManagementAPI_HostAddress = http://localhost:5115
+
+
+###
+### Retrieve all users
+GET {{UserManagementAPI_HostAddress}}/users
+Content-Type: application/json
+X-Api-Key: my-secret-key
+
+
+### Retrieve a user by ID
+GET {{UserManagementAPI_HostAddress}}/users/1
+Content-Type: application/json
+X-Api-Key: my-secret-key
+
+### Add a new user error of api key
+POST {{UserManagementAPI_HostAddress}}/users
+Content-Type: application/json
+X-Api-Key: my-secret-keyerror
+
+{
+    "id": 3,
+    "name": "Charlie",
+    "email": "charlie@example.com"
+}
+
+### Add a new user with error
+POST {{UserManagementAPI_HostAddress}}/users
+Content-Type: application/json
+X-Api-Key: my-secret-key
+
+{
+    "id": 3,
+    "name": Charlie,
+    "email": "charlie@example.com"
+}
+
+### Add a new user
+POST {{UserManagementAPI_HostAddress}}/users
+Content-Type: application/json
+X-Api-Key: my-secret-key
+
+{
+    "id": 3,
+    "name": "Charlie",
+    "email": "charlie@example.com"
+}
+
+### Add a new user with missing name
+POST {{UserManagementAPI_HostAddress}}/users
+Content-Type: application/json
+X-Api-Key: my-secret-key
+
+{
+    "id": 3,
+     "email": "charlie@example.com"
+}
+
+
+### Update an existing user's details with name missing
+PUT {{UserManagementAPI_HostAddress}}/users/1
+Content-Type: application/json
+X-Api-Key: my-secret-key
+
+{
+    "id": 1,
+    "name": "",
+    "email": "updatedalice@example.com"
+}
+
+### Update an existing user's details
+PUT {{UserManagementAPI_HostAddress}}/users/1
+Content-Type: application/json
+X-Api-Key: my-secret-key
+
+{
+    "id": 1,
+    "name": "Updated Alice",
+    "email": "updatedalice@example.com"
+}
+
+### Delete a user by ID
+DELETE {{UserManagementAPI_HostAddress}}/users/3
+Content-Type: application/json
+X-Api-Key: my-secret-key
+
+
+ 
+
+
+### Add a new user with authentication
+POST {{UserManagementAPI_HostAddress}}/users
+Content-Type: application/json
+X-Api-Key: my-secret-key
+
+{
+    "id": 4,
+    "name": "CharlieAuth",
+    "email": "charlieAuth@example.com"
+}
